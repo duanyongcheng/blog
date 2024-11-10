@@ -40,3 +40,45 @@ Final nav items: [
 ]
 === End Debug Info ===
 
+
+=== Nav Generation Debug Info ===
+Timestamp: 2024-11-10T11:07:13.060Z
+Current __dirname: /Users/bary/code/barry/blog/.vitepress/
+Looking for files in: /Users/bary/code/barry/blog/docs/algorithm
+Found files: [
+  "quickSort.md"
+]
+Added nav item: {
+  "text": "quickSort",
+  "link": "/algorithm/quickSort"
+}
+Final nav items: [
+  {
+    "text": "quickSort",
+    "link": "/algorithm/quickSort"
+  }
+]
+=== End Debug Info ===
+
+
+=== Nav Generation Debug Info ===
+Timestamp: 2024-11-10T11:07:13.063Z
+Current __dirname: /Users/bary/code/barry/blog/.vitepress/
+Looking for files in: /Users/bary/code/barry/blog/docs/services
+Found files: [
+  "assets",
+  "proxy.md"
+]
+Skipped non-markdown file: assets
+Added nav item: {
+  "text": "proxy",
+  "link": "/services/proxy"
+}
+Final nav items: [
+  {
+    "text": "proxy",
+    "link": "/services/proxy"
+  }
+]
+=== End Debug Info ===
+
