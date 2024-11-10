@@ -1,4 +1,4 @@
-import { readdirSync, writeFileSync } from "node:fs";
+import { readdirSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -18,7 +18,14 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 // 创建一个调试日志函数
 function debugLog(message: string) {
-  const logPath = resolve(__dirname, "../debug.log");
+  const logDir = resolve(__dirname, "../logs");
+  const logPath = resolve(logDir, "debug.log");
+
+  // 确保日志目录存在
+  if (!existsSync(logDir)) {
+    mkdirSync(logDir, { recursive: true });
+  }
+
   writeFileSync(logPath, message + "\n", { flag: "a" });
   console.log(message);
 }

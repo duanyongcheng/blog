@@ -3,7 +3,5 @@
 /node_modules
 .vitepress/temp
 .DS_Store
-debug.log
-dist
-debug.log
-docs/.vitepress/dist
+/logs
+/docs
