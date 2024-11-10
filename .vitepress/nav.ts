@@ -25,7 +25,7 @@ function debugLog(message: string) {
 
 function generateNavItems(dirPath: string): NavItem[] {
   const items: NavItem[] = [];
-  const fullPath = resolve(__dirname, "../docs", dirPath);
+  const fullPath = resolve(__dirname, "../notes", dirPath);
 
   debugLog("\n=== Nav Generation Debug Info ===");
   debugLog(`Timestamp: ${new Date().toISOString()}`);

@@ -7,7 +7,7 @@ export default defineConfig({
   title: "Barry Blog",
   description:
     "Remember the past, live the present, look forward to the future",
-  srcDir: "./docs",
+  srcDir: "./notes",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav,

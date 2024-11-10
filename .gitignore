@@ -6,3 +6,4 @@
 debug.log
 dist
 debug.log
+docs/.vitepress/dist

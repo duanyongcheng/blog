@@ -10,8 +10,8 @@
     "vitepress": "^1.5.0"
   },
   "scripts": {
-    "dev": "vitepress dev blog",
-    "build": "vitepress build blog",
-    "preview": "vitepress preview blog"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   }
 }
