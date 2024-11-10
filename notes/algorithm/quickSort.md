@@ -3,6 +3,8 @@
 ## 参考资料
 [左程云大佬的视频](https://www.youtube.com/watch?v=hcmSMRD_Eb0)
 
+[题目](https://www.luogu.com.cn/problem/P1177)
+
 ## 概述
 随机快速排序是快速排序的一个变体，其核心是在选择基准元素(pivot)时引入随机行为，从而避免最坏情况下的时间复杂度。
 
@@ -44,29 +46,80 @@
 ### 遍历结束后
 - `a` 和 `b` 分别是等于区域的左右边界（包含）
 
-## 代码示例（Python）
+## 代码示例（Java）
 
-```python
-def three_way_partition(arr, low, high):
-    # 随机选择基准元素
-    pivot = arr[random.randint(low, high)]
-    
-    a = low - 1      # 小于区域右边界
-    b = high + 1     # 大于区域左边界
-    i = low          # 遍历指针
-    
-    while i < b:
-        if arr[i] < pivot:
-            a += 1
-            arr[a], arr[i] = arr[i], arr[a]
-            i += 1
-        elif arr[i] > pivot:
-            b -= 1
-            arr[b], arr[i] = arr[i], arr[b]
-        else:
-            i += 1
-    
-    return a + 1, b - 1  # 返回等于区域的左右边界
+```java
+import java.io.*;
+
+public class QuickSort {
+
+    private static int MAXN = 100001;
+
+    private static int[] arr = new int[MAXN];
+
+    private static int first;
+
+    private static int last;
+
+    private static int n;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StreamTokenizer in = new StreamTokenizer(br);
+        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+        in.nextToken();
+        n = (int) in.nval;
+        for (int i = 0; i < n; i++) {
+            in.nextToken();
+            arr[i] = (int) in.nval;
+        }
+        quickSort(0, n - 1);
+        for (int i = 0; i < n - 1; i++) {
+            out.print(arr[i] + " ");
+        }
+        out.println(arr[n - 1]);
+        out.flush();
+        out.close();
+        br.close();
+    }
+
+    public static void quickSort(int l, int r) {
+        if (l >= r) {
+            return;
+        }
+        int x = arr[l + (int) (Math.random() * (r - l + 1))];
+        //  先走一遍
+        partition(l, r, x);
+        // 缓存当前partition得到的区间避免过程中，重置
+        int left = first;
+        int right = last;
+        // 左边
+        quickSort(l, left - 1);
+        quickSort(right + 1, r);
+    }
+
+    // 荷兰国旗
+    public static void partition(int l, int r, int x) {
+        first = l;
+        last = r;
+        int i = l;
+        while (i <= last) {
+            if (arr[i] == x) {
+                i++;
+            } else if (arr[i] < x) {
+                swap(first++, i++);
+            } else {
+                swap(i, last--);
+            }
+        }
+    }
+
+    public static void swap(int a, int b) {
+        int x = arr[a];
+        arr[a] = arr[b];
+        arr[b] = x;
+    }
+}
 ```
 
 ## 优点
