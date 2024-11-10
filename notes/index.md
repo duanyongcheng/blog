@@ -6,6 +6,9 @@ hero:
   name: "Barry"
   text: 算法、Codeing
   tagline: "A programmer who enjoys developing/coding."
+  image:
+    src: /assets/xxl.jpg
+    alt: VitePress
   actions:
     - theme: brand
       text: github

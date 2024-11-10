@@ -14,7 +14,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav,
     sidebar,
-
+    logo: "/assets/logo.png",
     socialLinks: [{ icon: "github", link: "https://github.com/duanyongcheng" }],
   },
 });
