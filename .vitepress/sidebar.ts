@@ -44,10 +44,6 @@ const sidebar: Sidebar = [
     items: generateSidebarItems("algorithm"),
   },
   {
-    text: "Tools",
-    items: generateSidebarItems("tools"),
-  },
-  {
     text: "Services",
     items: generateSidebarItems("services"),
   },
