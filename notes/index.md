@@ -7,7 +7,7 @@ hero:
   text: 算法、Codeing
   tagline: "A programmer who enjoys developing/coding."
   image:
-    src: /assets/xxl.png
+    src: /assets/i3wallpaper.jpg
     alt: VitePress
   actions:
     - theme: brand
